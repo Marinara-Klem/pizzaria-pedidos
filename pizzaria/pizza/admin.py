@@ -5,6 +5,7 @@ from pizza.models import Pizza
 
 
 class PizzaAdmin(admin.ModelAdmin):
-    list_display = ['sabor', 'preco']
+    list_display = ['sabor', 'preco', 'ativo']
+    list_filter = ['ativo']
 
 admin.site.register(Pizza, PizzaAdmin)
