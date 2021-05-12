@@ -7,6 +7,9 @@ from pizza.models import Pizza
 class Pedido(models.Model):
     cliente = models.CharField(editable=True, max_length=60)
 
+    def __str__(self):
+        return self.cliente
+
 
 class Item(models.Model):
     quantidade = models.IntegerField(editable=True, default=1)
