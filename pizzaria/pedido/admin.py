@@ -13,7 +13,7 @@ from pizza.models import Pizza
 
 
 class ItemTabularAdmin(admin.TabularInline):
-    list_display = ['quantidade', 'pedido', 'pizza']
+    list_display = ['quantidade', 'pizza']
     extra = 1
 
     # class ItemForm(PizzaCardapioForm):
@@ -26,7 +26,11 @@ class ItemTabularAdmin(admin.TabularInline):
 
 
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ['cliente']
+    list_display = ['cliente', 'data_do_pedido']
+    readonly_fields = ['data_do_pedido']
+    list_filter = ['data_do_pedido']
+
+    ordering = ['-data_do_pedido']
 
     inlines = [ItemTabularAdmin]
 
