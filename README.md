@@ -7,3 +7,5 @@ virtualenv venv
 ## como ativar virtualenv
 
 source venv/bin/activate
+
+- > Implematar cancelamento
